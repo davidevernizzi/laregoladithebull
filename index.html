@@ -100,8 +100,8 @@
         <h1 class="text-center">The Bull</h1>
         <form>
             <div class="form-group row">
-                <label class="col-sm-2" for="selector">Età</label>
-                <input type="range" class="col-sm-6 form-range" id="selector" min="1" max="100" value="50" step="1">
+                <label class="col-sm-2" for="ageSlector">Età</label>
+                <input type="range" class="col-sm-6 form-range" id="ageSelector" min="1" max="100" value="50" step="1">
                 <span class="col-sm-2" id="age">50</span>
             </div>
 
@@ -118,6 +118,13 @@
                 <h4 class="text-center">John Bogle dice <span id="stocksBogle"></span> di azionario</h4>
             </div>
         </form>
+    </div>
+
+    <div>
+        Liberamente tratto da <a href="https://open.spotify.com/show/2cQw8L6e7XXA90K1LpZekV">The Bull - Il tuo podcast di Finanza Personale</a> di Riccardo Spada.
+    </div>
+    <div>
+        Le idee furbe sono merito di Riccardo Spada, gli errori sono colpa mia.
     </div>
 </body>
 
@@ -142,9 +149,6 @@
         bogle = bogle > 0 ? bogle : 0
 
         stocksBogle.innerText = `${bogle}%`
-
-
-        return false
     }
 
     const update = (e) => {
@@ -153,14 +157,13 @@
     }
 
     const updateFed = (e) => {
-
         let fedValue = parseFloat(e.target.value, 10)
         fed.innerText = fedValue.toFixed(2)
         updateResult()
     }
 
-    const selector = document.getElementById('selector')
-    selector.addEventListener('input', update)
+    const ageSelector = document.getElementById('ageSelector')
+    ageSelector.addEventListener('input', update)
 
     const fedSelector = document.getElementById('fedSelector')
     fedSelector.addEventListener('input', updateFed)
