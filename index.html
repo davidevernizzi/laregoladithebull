@@ -67,7 +67,7 @@
             background-color: #75BBC0;
 
             border-radius: 0%;
-
+            padding: 0px;
         }
 
         .btn-primary {
@@ -147,6 +147,7 @@
 
         bogle = ageStartBogle - ageValue
         bogle = bogle > 0 ? bogle : 0
+        bogle = bogle < 100 ? bogle : 100
 
         stocksBogle.innerText = `${bogle}%`
     }
